@@ -9,6 +9,14 @@
             "email": "info@technohive.co.ke"
         }
     ],
+    "autoload": {
+        "psr-4": {
+
+
+            "TechnoHiveKenya\\LaravelBulkSMS\\": "packages/technohive-kenya/laravel-bulk-sms"
+        }
+
+    },
     "minimum-stability": "stable",
     "require": {}
 }
