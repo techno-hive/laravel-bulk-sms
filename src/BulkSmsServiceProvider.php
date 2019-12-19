@@ -32,7 +32,10 @@ class BulkSmsServiceProvider extends ServiceProvider
 
         ]);
         $this->publishes([
-            __DIR__.'/Assets' => public_path('vendor/courier'),
+            __DIR__.'/Assets' => public_path('laravelbulksms'),
         ], 'public');
+        $this->publishes([
+            __DIR__.'/Views' => resource_path('views/laravelbulksms'),
+        ]);
     }
 }
