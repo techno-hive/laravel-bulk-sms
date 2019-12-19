@@ -1,0 +1,14 @@
+{
+    "name": "technohive-kenya/laravel-bulk-sms",
+    "description": "This package enables easy integration of bulk sms to a laravel application.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Josphat",
+            "email": "info@technohive.co.ke"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
