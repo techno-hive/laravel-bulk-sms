@@ -27,5 +27,12 @@ class BulkSmsServiceProvider extends ServiceProvider
     {
         //
         include __DIR__."/routes.php";
+        $this->publishes([
+            __DIR__.'/Config/laravelbulksms.php' => config_path('laravelbulksms.php'),
+
+        ]);
+        $this->publishes([
+            __DIR__.'/Assets' => public_path('vendor/courier'),
+        ], 'public');
     }
 }

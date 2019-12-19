@@ -12,7 +12,8 @@ class LaravelBulkSMSController extends Controller
     {
     }
     public  function sendSMS(){
-        dd("Hey guys. We're making progress");
+        echo config('laravelbulksms.api_key');
+        return view('laravel-bulk-sms::sendsms');
     }
     public  function add($num,$num1){
         return $num + $num1;
