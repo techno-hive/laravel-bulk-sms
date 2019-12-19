@@ -5,6 +5,7 @@ namespace TechnoHiveKenya\LaravelBulkSMS\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use BulkSMS;
 class LaravelBulkSMSController extends Controller
 {
 
@@ -20,6 +21,7 @@ class LaravelBulkSMSController extends Controller
         return view('laravel-bulk-sms::sendsms');
     }
     public  function sendSMS(){
+        BulkSMS::sendSMS("Hey");
 
 
     }
