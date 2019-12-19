@@ -5,6 +5,9 @@ Route::group(['namespace' => 'TechnoHiveKenya\LaravelBulkSMS\Controllers'], func
     Route::get('dashboard',['uses' => 'LaravelBulkSMSController@dashboard']);
     Route::get('sendsms', ['uses' => 'LaravelBulkSMSController@sms']);
     Route::post('sendsms', ['uses' => 'LaravelBulkSMSController@sendSMS']);
+    Route::get('test',function (){
+        BulkSMS::sendSMS("Hey");
+    });
 })
 
 ?>

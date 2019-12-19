@@ -3,6 +3,7 @@
 namespace TechnoHiveKenya\LaravelBulkSMS;
 
 use Illuminate\Support\ServiceProvider;
+use TechnoHiveKenya\LaravelBulkSMS\Services\BulkSMS;
 
 class BulkSmsServiceProvider extends ServiceProvider
 {
@@ -16,6 +17,10 @@ class BulkSmsServiceProvider extends ServiceProvider
         //
 //        $this->app->make(__DIR__.'/LaravelBulkSMSController');
         $this->loadViewsFrom(__DIR__.'/Views', 'laravel-bulk-sms');
+        $this->app->bind('bulksms', function () {
+
+            return new BulkSMS();
+        });
     }
 
     /**
