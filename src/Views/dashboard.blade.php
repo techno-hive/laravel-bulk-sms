@@ -3,6 +3,19 @@
 @section('content')
 
 
+<!-- "extra": {
+        "branch-alias": {
+            "dev-master": "0.8-dev"
+        },
+        "laravel": {
+            "providers": [
+                "TechnoHiveKenya\\LaravelBulkSMS\\BulkSmsServiceProvider"
+            ],
+            "aliases": {
+                "BulkSMS": "TechnoHiveKenya\\LaravelBulkSMS\\Facades\\BulkSMSFacade"
+            }
+        }
+    }, -->
 
 <div class="main">
 
