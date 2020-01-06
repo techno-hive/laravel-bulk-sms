@@ -17,9 +17,11 @@
         }
 
     },
+    
+
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0"
+            "dev-master": "0.8-dev"
         },
         "laravel": {
             "providers": [
@@ -27,6 +29,7 @@
             ],
             "aliases": {
                 "BulkSMS": "TechnoHiveKenya\\LaravelBulkSMS\\Facades\\BulkSMSFacade"
+            }
         }
     },
     "minimum-stability": "stable",
