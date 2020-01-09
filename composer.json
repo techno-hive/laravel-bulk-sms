@@ -17,6 +17,16 @@
         }
 
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TechnoHiveKenya\\LaravelBulkSMS\\BulkSmsServiceProvider"
+            ],
+            "aliases": {
+                "Bulksms": "TechnoHiveKenya\\LaravelBulkSMS\\Facades\\BulkSMSFacade"
+            }
+        }
+    },
     
 
     "minimum-stability": "stable",
