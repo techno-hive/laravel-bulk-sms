@@ -7,7 +7,7 @@ class BulkSMS
     {
         dd("Is this sms should be send?");
     }
-    public  function sendSMS($mobile,$message){
+    protected static function sendSMS($mobile,$message){
         $partnerID = config('laravelbulksms.partner_id');
         $apikey = config('laravelbulksms.api_key');
         $shortcode = config('laravelbulksms.sender_id');
