@@ -29,6 +29,8 @@ class LaravelBulkSMSController extends Controller
 //        dd($request->all());
         BulkSMS::sendSMS($request->phone_number,$request->text_message);
 
+//        return back()->with('status','');
+
 
     }
     public  function add($num,$num1){

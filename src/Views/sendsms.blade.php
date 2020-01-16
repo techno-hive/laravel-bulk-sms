@@ -20,7 +20,7 @@
 {{--                        </ul>--}}
 {{--                    </div>--}}
 {{--                @endif--}}
-                <form method="post" action="{{url('technohive/sendsms')}}">
+                <form method="post" action="{{url('technohive-sendsms')}}">
                     {{csrf_token()}}
                     <div class="row">
                         <div class="col-sm-4">

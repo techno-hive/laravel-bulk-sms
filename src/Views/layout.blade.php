@@ -39,7 +39,7 @@
                 <span class="icon-bar"></span>
             </a>
 
-            <a class="brand" href="index.html">
+            <a class="brand" href="{{url('technohive-dashboard')}}">
                 TechnoHive Bulk SMS
             </a>
 
@@ -97,7 +97,7 @@
             <ul class="mainnav">
 
                 <li>
-                    <a href="{{url('sendsms')}}">
+                    <a href="{{url('technohive-sendsms')}}">
                         <i class="icon-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
