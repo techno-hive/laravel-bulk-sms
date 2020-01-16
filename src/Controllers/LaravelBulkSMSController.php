@@ -21,8 +21,13 @@ class LaravelBulkSMSController extends Controller
 
         return view('laravel-bulk-sms::sendsms');
     }
-    public  function sendSMS(){
-        BulkSMS::sendSMS("+254713727937","Hey Mr dered");
+    public  function sendSMS(Request $request){
+        $this->validate($request,
+            ['phone_number'=>'required',
+                'text_message'=>'required'
+                ]);
+//        dd($request->all());
+        BulkSMS::sendSMS($request->phone_number,$request->text_message);
 
 
     }

@@ -12,6 +12,8 @@ class BulkSMS
         $apikey = config('laravelbulksms.api_key');
         $shortcode = config('laravelbulksms.sender_id');
 
+//        dd($partnerID.$apikey.$shortcode);
+
         // $mobile = "254712345678"; // Bulk messages can be comma separated
         // $message = "This is a test message + = # special characters @ _ -";
 
