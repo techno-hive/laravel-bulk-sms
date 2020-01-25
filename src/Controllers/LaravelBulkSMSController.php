@@ -2,9 +2,11 @@
 
 namespace TechnoHiveKenya\LaravelBulkSMS\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use TechnoHiveKenya\LaravelBulkSMS\Services\BulkSMS;
 
 class LaravelBulkSMSController extends Controller
@@ -23,13 +25,18 @@ class LaravelBulkSMSController extends Controller
     }
     public  function sendSMS(Request $request){
         $this->validate($request,
-            ['phone_number'=>'required',
+            [
+                'phone_number'=>'required',
                 'text_message'=>'required'
                 ]);
-//        dd($request->all());
-        BulkSMS::sendSMS($request->phone_number,$request->text_message);
 
-//        return back()->with('status','');
+       $res= BulkSMS::sendSMS($request->phone_number,$request->text_message);
+
+
+
+        return back()->with('status',$res);
+
+
 
 
     }

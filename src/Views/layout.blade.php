@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <link href="{{('laravelbulksms/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{('laravelbulksms/css/bootstrap-responsive.min.css')}}" rel="stylesheet">
+    <link href="{{('laravelbulksmsJ')}}" rel="stylesheet">
 
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
     <link href="{{('laravelbulksms/css/font-awesome.css')}}" rel="stylesheet">
@@ -97,7 +97,7 @@
             <ul class="mainnav">
 
                 <li>
-                    <a href="{{url('technohive-sendsms')}}">
+                    <a href="{{url('technohive-dashboard')}}">
                         <i class="icon-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
@@ -105,10 +105,24 @@
 
 
 
+
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-long-arrow-down"></i>
+                        <span>Send SMS</span>
+                        <b class="caret"></b>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="{{url('technohive-sendsms')}}">Single SMS</a></li>
+                        <li><a href="{{url('technohive-sendbulk')}}">Bulk SMS</a></li>
+
+                    </ul>
+                </li>
                 <li class="active">
-                    <a href="reports.html">
+                    <a href="{{url('technohive-sendsms')}}">
                         <i class="icon-list-alt"></i>
-                        <span>Reports</span>
+                        <span>Send SMS</span>
                     </a>
                 </li>
 

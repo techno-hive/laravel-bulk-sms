@@ -16,9 +16,10 @@
     ],
     "autoload": {
         "psr-4": {
+            "TechnoHiveKenya\\LaravelBulkSMS\\": "packages/technohive-kenya/laravel-bulk-sms",
 
 
-            "TechnoHiveKenya\\LaravelBulkSMS\\": "src"
+
         }
 
     },

@@ -1,4 +1,4 @@
-@extends('laravelbulksms.layout')
+@extends('laravel-bulk-sms::layout')
 
 @section('content')
 

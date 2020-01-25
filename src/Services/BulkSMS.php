@@ -1,6 +1,9 @@
 <?php
 namespace TechnoHiveKenya\LaravelBulkSMS\Services;
 
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+
 class BulkSMS
 {
     public function dump()
@@ -24,7 +27,50 @@ class BulkSMS
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $response = curl_exec($ch);
         curl_close($ch);
-        echo "Response: $response";
+
+//        return $response;
+
+        $res= json_decode($response,true);
+
+        $now = new Carbon();
+        $status = '';
+
+        if(isset($res['respose-code'])){
+
+            DB::table('technohive_sms')->insert(
+                ['response_code' => $res['respose-code'], 'response_description' => $res['response-description'],'created_at'=>$now->format('Y-m-d H:i:s'),
+                    'updated_at'=>$now->format('Y-m-d H:i:s')]
+
+            );
+
+
+
+        }elseif(isset($res['response-code'])){
+            DB::table('technohive_sms')->insert(
+                ['response_code' => $res['response-code'], 'response_description' => $res['response-description'],'created_at'=>$now->format('Y-m-d H:i:s'),
+                    'updated_at'=>$now->format('Y-m-d H:i:s')]
+
+            );
+
+
+        }else{
+
+            foreach ($res['responses'] as $res){
+                $res = ['response_code' => $res['respose-code'], 'response_description' => $res['response-description'],
+                    'mobile_number' => $res['mobile'], 'message_id' => $res['messageid'],
+                    'network_id' => $res['networkid'],'created_at'=>$now->format('Y-m-d H:i:s'),
+                    'updated_at'=>$now->format('Y-m-d H:i:s') ];
+                DB::table('technohive_sms')->insert($res);
+            }
+        }
+
+
+
+
+
+    return $res['response-description'];
+
+
 
     }
 }

@@ -17,6 +17,7 @@ class BulkSmsServiceProvider extends ServiceProvider
         //
 //        $this->app->make(__DIR__.'/LaravelBulkSMSController');
         $this->loadViewsFrom(__DIR__.'/Views', 'laravel-bulk-sms');
+        $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->app->bind('bulksms', function () {
 
             return new BulkSMS();
@@ -33,14 +34,14 @@ class BulkSmsServiceProvider extends ServiceProvider
         //
         include __DIR__."/routes.php";
         $this->publishes([
-            __DIR__.'/Config/laravelbulksms.php' => config_path('laravelbulksms.php'),
+            __DIR__.'/Config/laravelbulksms.php' => config_path('laravelbulksmsJ.php'),
 
         ]);
         $this->publishes([
-            __DIR__.'/Assets' => public_path('laravelbulksms'),
+            __DIR__.'/Assets' => public_path('laravelbulksmsJ'),
         ], 'public');
         $this->publishes([
-            __DIR__.'/Views' => resource_path('views/laravelbulksms'),
+            __DIR__.'/Views' => resource_path('views/laravelbulksmsJ'),
         ]);
     }
 }
