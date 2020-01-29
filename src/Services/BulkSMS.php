@@ -34,8 +34,10 @@ class BulkSMS
 
         $now = new Carbon();
         $status = '';
+        $des="";
 
         if(isset($res['respose-code'])){
+            $des=$res['response-description'];
 
             DB::table('technohive_sms')->insert(
                 ['response_code' => $res['respose-code'], 'response_description' => $res['response-description'],'created_at'=>$now->format('Y-m-d H:i:s'),
@@ -46,6 +48,7 @@ class BulkSMS
 
 
         }elseif(isset($res['response-code'])){
+            $des=$res['response-description'];
             DB::table('technohive_sms')->insert(
                 ['response_code' => $res['response-code'], 'response_description' => $res['response-description'],'created_at'=>$now->format('Y-m-d H:i:s'),
                     'updated_at'=>$now->format('Y-m-d H:i:s')]
@@ -56,6 +59,7 @@ class BulkSMS
         }else{
 
             foreach ($res['responses'] as $res){
+                $des=$res['response-description'];
                 $res = ['response_code' => $res['respose-code'], 'response_description' => $res['response-description'],
                     'mobile_number' => $res['mobile'], 'message_id' => $res['messageid'],
                     'network_id' => $res['networkid'],'created_at'=>$now->format('Y-m-d H:i:s'),
@@ -68,7 +72,7 @@ class BulkSMS
 
 
 
-    return $res['response-description'];
+    return $des;
 
 
 
