@@ -20,7 +20,7 @@ class BulkSMS
         // $mobile = "254712345678"; // Bulk messages can be comma separated
         // $message = "This is a test message + = # special characters @ _ -";
 
-        $finalURL = "https://mysms.celcomafrica.com/api/services/sendsms/?apikey=" . urlencode($apikey) . "&partnerID=" . urlencode($partnerID) . "&message=" . urlencode($message) . "&shortcode=$shortcode&mobile=$mobile";
+        $finalURL = "https://bulksms.technohive.co.ke/api/services/sendsms/?apikey=" . urlencode($apikey) . "&partnerID=" . urlencode($partnerID) . "&message=" . urlencode($message) . "&shortcode=$shortcode&mobile=$mobile";
         $ch = curl_init();
         \curl_setopt($ch, CURLOPT_URL, $finalURL);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
